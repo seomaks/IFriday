@@ -31,7 +31,6 @@ export const registerTC = (data: RegisterParamsType) => (dispatch: Dispatch) => 
       console.log("Registration was success ")
     })
     .catch((e: any) => {
-      debugger
       const error = e.response ? e.response.data.error : (e.message + ', more details in the console');
       dispatch(setSignUpErrorAC(error))
     })

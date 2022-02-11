@@ -42,15 +42,15 @@ export const SignUp = () => {
     <div className={style.container}>
       <h1>Sign Up</h1>
       <form name="form" onSubmit={handleSubmit}>
-        <label>
+        <label>e-mail:
           <input type="text" name="email" value={register.email}
                  onChange={handleChange}/>
         </label>
-        <label>
+        <label>password:
           <input type="password" name="password" value={register.password}
                  onChange={handleChange}/>
         </label>
-        <label>
+        <label>confirm password:
           <input type="password" name="password2" value={register.password2}
                  onChange={handleChange}/>
         </label>

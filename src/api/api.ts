@@ -7,34 +7,35 @@ const instance = axios.create({
 
 export const authAPI = {
   registration(data: RegisterParamsType) {
-     return instance.post<RegisterParamsType, AxiosResponse>('auth/register', data);
-  }
+    return instance.post<RegisterParamsType, AxiosResponse>('auth/register', data);
+  },
+  login(data: LoginParamsType) {
+    return instance.post<LoginParamsType, AxiosResponse<ResponseType>>('auth/login', data);
+  },
 }
 
 // types
-export type RegisterParamsType = {
-    email: string
-    password: string
+export type ResponseType = {
+  _id: string;
+  email: string;
+  name: string;
+  avatar?: string;
+  publicCardPacksCount: number; // количество колод
+  created: Date;
+  updated: Date;
+  isAdmin: boolean;
+  verified: boolean; // подтвердил ли почту
+  rememberMe: boolean;
+  error?: string;
 }
 
-//  login(email: string, password: string, rememberMe: boolean = false) {
-//     return instance.post(`auth/login`, {email, password, rememberMe})
-//   },
+export type RegisterParamsType = {
+  email: string
+  password: string
+}
 
-//     login(data: LoginParamsType) {
-//         return instance.post<LoginParamsType, AxiosResponse<ResponseType<{ userId: number }>>>('auth/login', data);
-//     },
-
-//export type LoginParamsType = {
-//     email: string
-//     password: string
-//     rememberMe?: boolean
-//     captcha?: string
-// }
-
-//export type ResponseType<D = {}> = {
-//     resultCode: number
-//     messages: Array<string>
-//     fieldsErrors: Array<string>
-//     data: D
-// }
+export type LoginParamsType = {
+  email: string
+  password: string
+  rememberMe: boolean
+}
