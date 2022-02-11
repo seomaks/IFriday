@@ -17,3 +17,6 @@ label {
     padding: 10px;
 }
 
+.formSummaryError {
+    color: red;
+}
