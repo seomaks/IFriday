@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
-import {Header} from "./features/Header/Header";
-import {MainPage} from "./features/Main/MainPage";
-import {SignIn} from "./features/SignIn/SignIn";
-import {SignUp} from "./features/SignUp/SignUp";
+import {Header} from "../features/Header/Header";
+import {MainPage} from "../features/Main/MainPage";
+import {SignIn} from "../features/SignIn/SignIn";
+import {SignUp} from "../features/SignUp/SignUp";
+import {useDispatch} from "react-redux";
+import {initializeAppTC} from "./app-reducer";
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(initializeAppTC())
+  }, [dispatch])
+
+
   return (
     <div className="App">
       <Header/>
