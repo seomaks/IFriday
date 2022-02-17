@@ -23,7 +23,6 @@ export const Login = () => {
     }
   })
 
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.persist()
     setLogin(login => ({...login, [e.target.name]: e.target.value}));

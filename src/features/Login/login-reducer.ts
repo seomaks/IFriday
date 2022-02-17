@@ -6,7 +6,6 @@ const SET_IS_LOGGED = 'login/SET-IS-LOGGED-IN'
 const initialState = {
   isLoggedIn: false
 }
-type InitialStateType = typeof initialState
 
 export const loginReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
   switch (action.type) {
@@ -42,5 +41,6 @@ export const logoutTC = () => async (dispatch: Dispatch) => {
 }
 
 // types
+type InitialStateType = typeof initialState
 type SetIsLoggedInActionType = ReturnType<typeof setIsLoggedInAC>
 type ActionsType = SetIsLoggedInActionType
