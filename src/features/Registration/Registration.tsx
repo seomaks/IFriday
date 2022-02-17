@@ -1,14 +1,15 @@
 import React, {ChangeEvent, FormEvent, useState} from "react";
-import style from "../SignIn/SignIn.module.css";
+import style from "../Login/Login.module.css";
 import {useDispatch, useSelector} from "react-redux";
-import {ErrorType, registerTC} from "./signup-reducer";
+import { registerTC} from "./registration-reducer";
 import {AppStateType} from "../../store/store";
 import { Navigate } from "react-router-dom";
+import {ErrorType} from "../../app/app-reducer";
 
-export const SignUp = () => {
+export const Registration = () => {
   const dispatch = useDispatch()
   const isRegistered = useSelector<AppStateType, boolean>(state => state.signUp.isRegistered)
-  const isError = useSelector<AppStateType, ErrorType>(state => state.signUp.error)
+  const isError = useSelector<AppStateType, ErrorType>(state => state.app.error)
 
   const [register, setRegister] = useState(() => {
     return {

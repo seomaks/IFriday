@@ -3,15 +3,17 @@ import React, {
   FormEvent,
   useState
 } from "react";
-import style from './SignIn.module.css'
+import style from './Login.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
 import { Navigate } from "react-router-dom";
 import {loginTC} from "./login-reducer";
+import {ErrorType} from "../../app/app-reducer";
 
-export const SignIn = () => {
+export const Login = () => {
   const dispatch = useDispatch()
   const isLoggedIn = useSelector<AppStateType, boolean>(state => state.signIn.isLoggedIn)
+  const isError = useSelector<AppStateType, ErrorType>(state => state.app.error)
 
   const [login, setLogin] = useState(() => {
     return {
@@ -64,6 +66,9 @@ export const SignIn = () => {
         </label>
         <input type="submit" value="Sign In"/>
       </form>
+      {isError && <div className={style.formSummaryError}>
+        {isError}
+      </div>}
     </div>
   );
 }
