@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
-import {authAPI, NewPasswordParamsType} from "../../api/api";
-import {handlerAppError} from "../../utilities/handlerAppError";
+import {authAPI} from "../api/api";
+import {handlerAppError} from "../utilities/handlerAppError";
 
 const initialState = {
   disabledButton: false,
@@ -9,10 +9,10 @@ const initialState = {
 
 export const PasswordReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
   switch (action.type) {
-    case "Password/SET-BUTTON-CONDITION": {
+    case "password/SET-BUTTON-CONDITION": {
       return {...state, disabledButton: action.isDisabled}
     }
-    case "Password/SET-SUCCESS": {
+    case "password/SET-SUCCESS": {
       return {...state, isSuccess: action.value}
     }
     default:
@@ -21,17 +21,16 @@ export const PasswordReducer = (state: InitialStateType = initialState, action: 
 }
 
 // actions
-
 export const setButtonDisableAC = (isDisabled: boolean) => {
   return {
-    type: 'Password/SET-BUTTON-CONDITION',
+    type: 'password/SET-BUTTON-CONDITION',
     isDisabled: isDisabled
   } as const
 }
 
 export const setIsSuccessAC = (value: boolean) => {
   return {
-    type: 'Password/SET-SUCCESS',
+    type: 'password/SET-SUCCESS',
     value: value
   } as const
 }

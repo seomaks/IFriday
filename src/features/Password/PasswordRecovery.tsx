@@ -1,10 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
-import {passwordRecoveryTC} from "./password-reducer";
+import {passwordRecoveryTC} from "../../store/password-reducer";
 import React, {ChangeEvent, FormEvent, useState} from "react";
 import {Navigate} from "react-router-dom";
 import {AppStateType} from "../../store/store";
 import style from './Password.module.css'
-import {ErrorType, setAppErrorAC} from "../../app/app-reducer";
+import {ErrorType, setAppErrorAC} from "../../store/app-reducer";
 
 export const PasswordRecovery = () => {
 

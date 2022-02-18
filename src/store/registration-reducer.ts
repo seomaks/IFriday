@@ -1,8 +1,7 @@
-import {authAPI, RegisterParamsType} from "../../api/api";
+import {authAPI, RegisterParamsType} from "../api/api";
 import {Dispatch} from "redux";
-import {handlerAppError} from "../../utilities/handlerAppError";
+import {handlerAppError} from "../utilities/handlerAppError";
 
-const SET_IS_REGISTERED = 'SIGNUP/SET-IS-REGISTERED'
 const initialState = {
   isRegistered: false,
 }
@@ -11,7 +10,7 @@ type InitialStateType = typeof initialState
 
 export const registrationReducer = (state: InitialStateType = initialState, action: AppActionsType): InitialStateType => {
   switch (action.type) {
-    case SET_IS_REGISTERED:
+    case 'signup/SET-IS-REGISTERED':
       return {...state, isRegistered: action.isRegistered}
     default:
       return state
@@ -20,7 +19,7 @@ export const registrationReducer = (state: InitialStateType = initialState, acti
 
 // actions
 export const setIsRegisteredAC = (isRegistered: boolean) => ({
-  type: SET_IS_REGISTERED,
+  type: 'signup/SET-IS-REGISTERED',
   isRegistered
 } as const)
 

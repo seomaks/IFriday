@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
 import {Navigate} from "react-router-dom";
 import {ResponseType} from "../../api/api";
-import {logoutTC} from "../Login/login-reducer";
+import {logoutTC} from "../../store/login-reducer";
 import Preloader from "../../components/common/Preloader";
 
 export const Profile = () => {

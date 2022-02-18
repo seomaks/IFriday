@@ -1,10 +1,8 @@
 import {Dispatch} from "redux";
-import {setIsLoggedInAC} from "../features/Login/login-reducer";
+import {setIsLoggedInAC} from "./login-reducer";
 import {authAPI, ResponseType} from "../api/api";
+import {SetPacksActionType} from "./packs-reducer";
 
-const SET_ERROR = 'APP/SET-ERROR'
-const GET_USER_DATA = 'APP/GET-USER-DATA'
-const SET_IS_INITIALIZED = 'APP/SET-IS-INITIALIZED'
 const initialState = {
   isInitialized: false,
   isData: {} as ResponseType,
@@ -15,11 +13,11 @@ type InitialStateType = typeof initialState
 
 export const appReducer = (state: InitialStateType = initialState, action: AppActionsType): InitialStateType => {
   switch (action.type) {
-    case SET_IS_INITIALIZED:
+    case 'app/SET-IS-INITIALIZED':
       return {...state, isInitialized: action.isInitialized}
-    case GET_USER_DATA:
+    case 'app/GET-USER-DATA':
       return {...state, isData: action.data}
-    case SET_ERROR:
+    case 'app/SET-ERROR':
       return {...state, error: action.error}
     default:
       return state
@@ -28,18 +26,17 @@ export const appReducer = (state: InitialStateType = initialState, action: AppAc
 
 // actions
 export const setIsInitializedAC = (isInitialized: boolean) => ({
-  type: SET_IS_INITIALIZED,
+  type: 'app/SET-IS-INITIALIZED',
   isInitialized
 } as const)
 export const getUserDataAC = (data: ResponseType) => ({
-  type: GET_USER_DATA,
+  type: 'app/GET-USER-DATA',
   data
 } as const)
 export const setAppErrorAC = (error: ErrorType) => ({
-  type: SET_ERROR,
+  type: 'app/SET-ERROR',
   error
 } as const)
-
 
 // thunks
 export const initializeAppTC = () => async (dispatch: Dispatch) => {
@@ -60,5 +57,6 @@ export type AppActionsType =
   SetIsInitializedActionType
   | GetUserDataActionType
   | SetAppErrorActionType
+  | SetPacksActionType
 export type ErrorType = string | null
 

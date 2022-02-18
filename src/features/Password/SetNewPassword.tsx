@@ -1,9 +1,9 @@
 import {AppStateType} from "../../store/store";
 import {useDispatch, useSelector} from "react-redux";
 import {ChangeEvent, FormEvent, useState} from "react";
-import {createNewPasswordTC} from "./password-reducer";
+import {createNewPasswordTC} from "../../store/password-reducer";
 import {Navigate, useParams} from "react-router-dom";
-import {ErrorType} from "../../app/app-reducer";
+import {ErrorType} from "../../store/app-reducer";
 import style from "./Password.module.css";
 
 export const SetNewPassword = () => {

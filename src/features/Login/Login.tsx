@@ -7,8 +7,8 @@ import style from './Login.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
 import { Navigate } from "react-router-dom";
-import {loginTC} from "./login-reducer";
-import {ErrorType} from "../../app/app-reducer";
+import {loginTC} from "../../store/login-reducer";
+import {ErrorType} from "../../store/app-reducer";
 
 export const Login = () => {
   const dispatch = useDispatch()

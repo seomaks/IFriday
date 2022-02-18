@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import './App.css';
 import {Header} from "../features/Header/Header";
 import {useDispatch, useSelector} from "react-redux";
-import {initializeAppTC} from "./app-reducer";
+import {initializeAppTC} from "../store/app-reducer";
 import {Routing} from "../features/Routes/Routes";
 import {AppStateType} from "../store/store";
 import Preloader from "../components/common/Preloader";
