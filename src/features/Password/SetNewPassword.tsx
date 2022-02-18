@@ -4,7 +4,7 @@ import {ChangeEvent, FormEvent, useState} from "react";
 import {createNewPasswordTC} from "./password-reducer";
 import {Navigate, useParams} from "react-router-dom";
 import {ErrorType} from "../../app/app-reducer";
-import style from "./PasswordRecovery.module.css";
+import style from "./Password.module.css";
 
 export const SetNewPassword = () => {
 

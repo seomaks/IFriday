@@ -3,7 +3,7 @@ import {passwordRecoveryTC} from "./password-reducer";
 import React, {ChangeEvent, FormEvent, useState} from "react";
 import {Navigate} from "react-router-dom";
 import {AppStateType} from "../../store/store";
-import style from './PasswordRecovery.module.css'
+import style from './Password.module.css'
 import {ErrorType, setAppErrorAC} from "../../app/app-reducer";
 
 export const PasswordRecovery = () => {

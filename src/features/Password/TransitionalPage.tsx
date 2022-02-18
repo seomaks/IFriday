@@ -1,9 +1,9 @@
-import style from "./TransitionalPage.module.css";
+import style from "./Password.module.css";
 import env from "./../../assets/img/env.png";
 
 export const TransitionalPage = () => {
   return (
-    <div className={style.transitionalPage}>
+    <div className={style.container}>
       <h1>Congratulations!</h1>
       <img className={style.img} src={env}/>
       <h4 className={style.title}>Check your email!</h4>

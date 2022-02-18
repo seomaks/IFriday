@@ -1,9 +1,9 @@
-import style from './SuccessRecovery.module.css'
+import style from './Password.module.css'
 import env from "./../../assets/img/env.png";
 
 export const SuccessRecoveryPassword = () => {
   return (
-    <div className={style.successRecovery}>
+    <div className={style.container}>
       <h1>Success!</h1>
       <img className={style.img} src={env}/>
       <h4 className={style.title}>You have successfully created a new password</h4>

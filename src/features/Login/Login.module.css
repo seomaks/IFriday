@@ -1,7 +1,14 @@
 .container {
+    padding: 25px 33px 30px;
+    width: 413px;
+    background-color: #2F4F4F;
+    color: #F9F9FE;
+    border-radius: 8px;
+    margin: 1em auto 2em;
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 form {

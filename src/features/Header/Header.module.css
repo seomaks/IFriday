@@ -1,13 +1,18 @@
 .header {
     height: 80px;
-    background-color: gray;
+    background-color: #2F4F4F;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     text-transform: uppercase;
+    color: #F9F9FE;
 }
 
 .item {
     margin: 20px;
     text-decoration: none;
+}
+
+a {
+    color: #F9F9FE;
 }
