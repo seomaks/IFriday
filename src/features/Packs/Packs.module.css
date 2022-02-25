@@ -1,0 +1,46 @@
+.packsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.packsHeader {
+    display: flex;
+    width: 100%;
+}
+
+.packsContentWrapper {
+    display: flex;
+    margin: 20px 15px;
+    background-color: white;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 95%;
+    overflow: hidden;
+}
+
+.sideBar {
+    padding-top: 2%;
+    padding-left: 2%;
+    display: flex;
+    width: 20%;
+}
+
+.search {
+    width: 196px;
+    height: 25px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.tableWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}

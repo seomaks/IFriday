@@ -1,11 +1,12 @@
 import {instance} from './api'
 import {AxiosResponse} from 'axios'
+import {CardsStateType} from "../store/cards-reducer";
 //import {CardsStateType} from '../store/cardsReducer'
 
 export const cardsAPI = {
-  // getCards(payload: GetCardsParams) {
-  //   return instance.get<CardsStateType>('/cards/card', {params: payload})
-  // },
+  getCards(payload: GetCardsParams) {
+    return instance.get<CardsStateType>('/cards/card', {params: payload})
+  },
   createCard(payload: CardParamsType) {
     return instance.post<CardType, AxiosResponse<CardType>, CardParamsType>('cards/card', payload)
   },

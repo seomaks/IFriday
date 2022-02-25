@@ -1,0 +1,26 @@
+.paginationWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+}
+
+.buttonItem {
+    border: none;
+    border-radius: 2px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.buttonItem:hover {
+    opacity: 0.9;
+}
+
+.active {
+    color: white;
+    background-color: #21268F;
+}

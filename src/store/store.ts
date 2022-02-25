@@ -5,6 +5,7 @@ import {loginReducer} from "./login-reducer";
 import {AppActionsType, appReducer} from "./app-reducer";
 import {PasswordReducer} from "./password-reducer";
 import {PacksReducer} from "./packs-reducer";
+import {cardsReducer} from "./cards-reducer";
 
 let rootReducer = combineReducers({
   signUp: registrationReducer,
@@ -12,6 +13,7 @@ let rootReducer = combineReducers({
   app: appReducer,
   password: PasswordReducer,
   packs: PacksReducer,
+  cards: cardsReducer
 })
 
 export type AppStateType = ReturnType<typeof rootReducer>;

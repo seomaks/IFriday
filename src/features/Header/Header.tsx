@@ -9,6 +9,7 @@ export const Header = () => {
       <Link to="sign-in" className={style.item}>Sign In</Link>
       <Link to="sign-up" className={style.item}>Sign Up</Link>
       <Link to="pass-recovery" className={style.item}>Password Recovery</Link>
+      <Link to="packs" className={style.item}>Packs</Link>
     </div>
   );
 }

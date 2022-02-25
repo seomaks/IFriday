@@ -7,8 +7,6 @@ import {Routing} from "../features/Routes/Routes";
 import {AppStateType} from "../store/store";
 import Preloader from "../components/common/Preloader";
 
-
-
 function App() {
   const dispatch = useDispatch()
   const isInitialized = useSelector<AppStateType, boolean>(state => state.app.isInitialized)
