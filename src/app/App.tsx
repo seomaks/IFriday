@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {initializeAppTC} from "../store/app-reducer";
 import {Routing} from "../features/Routes/Routes";
 import {AppStateType} from "../store/store";
-import Preloader from "../components/common/Preloader";
+import Preloader from "../components/Preloader/Preloader";
 
 function App() {
   const dispatch = useDispatch()

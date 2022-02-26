@@ -1,5 +1,5 @@
 import React from 'react'
-import {CheckBoxMyId} from "../../components/CheckMyBoxId/CheckMyBoxId";
+import {CheckBoxMyId} from "../../components/CheckMyBoxId/CheckBoxMyId";
 import {fetchPacks} from "../../store/packs-reducer";
 import {RangeContainer} from "./RangeContainer/RangeContainer";
 import { Search } from '../../components/Search/Search';
@@ -38,7 +38,7 @@ export const PacksList = React.memo(({
         minCardsCount={minCardsCount}
         maxCardsCount={maxCardsCount}
         handleRangeChange={handleRangeChange}/>
-      <Search fetchData={fetchPacks} className={className}/>
+      <Search fetchPacks={fetchPacks} className={className}/>
     </div>
   )
 })

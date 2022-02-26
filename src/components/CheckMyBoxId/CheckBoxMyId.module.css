@@ -1,4 +1,4 @@
-.mainWrapperMy {
+.mainWrapperMyPacks {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1)
 }
 
-.itemMy {
+.itemMyPacks {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,22 +19,22 @@
     transition: all ease-in 200ms;
 }
 
-.itemMy:first-child {
+.itemMyPacks:first-child {
     border-right: 1px solid black;
     border-radius: 5px 0 0 5px;
 }
 
-.itemMy:last-child {
+.itemMyPacks:last-child {
     border-radius: 0 5px 5px 0;
 }
 
-.activeMy {
-    background-color: #9A91C8;
-}
-
-.itemMy:hover {
+.itemMyPacks:hover {
     transform: translateY(1%);
     color: #1d3a74;
+}
+
+.activeMyPacks {
+    background-color: #9A91C8;
 }
 
 .mainWrapperProfile {

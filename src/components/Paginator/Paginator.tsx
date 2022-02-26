@@ -9,8 +9,8 @@ type PaginationPropsType = {
   currentPage: number
 }
 
-const LEFT_PAGE = "LEFT"
-const RIGHT_PAGE = "RIGHT";
+const PREV_PAGE = "LEFT"
+const NEXT_PAGE = "RIGHT";
 
 const range = (from: number, to: number, step: number = 1) => {
   let i = from;
@@ -54,12 +54,12 @@ export const Pagination = ({
       switch (true) {
         case hasLeftSpill && !hasRightSpill: {
           const extraPages = range(startPage - spillOffset, startPage - 1);
-          pages = [LEFT_PAGE, ...extraPages, ...pages];
+          pages = [PREV_PAGE, ...extraPages, ...pages];
           break;
         }
         case hasLeftSpill && hasRightSpill:
         default: {
-          pages = [LEFT_PAGE, ...pages, RIGHT_PAGE];
+          pages = [PREV_PAGE, ...pages, NEXT_PAGE];
           break;
         }
       }
@@ -74,7 +74,7 @@ export const Pagination = ({
     <nav aria-label="Countries Pagination" className={style.paginationWrapper}>
       <ul className={style.pagination}>
         {pages.map((page, index) => {
-          if (page === LEFT_PAGE)
+          if (page === PREV_PAGE)
             return (
               <li key={index}>
                 <button
@@ -85,7 +85,7 @@ export const Pagination = ({
                 </button>
               </li>
             );
-          if (page === RIGHT_PAGE)
+          if (page === NEXT_PAGE)
             return (
               <li key={index}>
                 <button

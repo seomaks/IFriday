@@ -1,6 +1,6 @@
 import React from 'react'
 import {iconPacksProfile, iconsProfile} from '../../assets/icons/icons'
-import style from './CheckMyBoxId.module.css'
+import style from './CheckBoxMyId.module.css'
 
 type CheckBoxMyIdPropsType = {
   stateBoolean: boolean
@@ -28,15 +28,15 @@ export const CheckBoxMyId = React.memo(({
   }
 
   const mainWrapperStyle = styleMyPacks
-    ? `${style.mainWrapperMy}`
+    ? `${style.mainWrapperMyPacks}`
     : `${style.mainWrapperProfile}`
 
   const itemStyle = styleMyPacks
-    ? `${style.itemMy}`
+    ? `${style.itemMyPacks}`
     : `${style.itemProfile}`
 
   const active = styleMyPacks
-    ? `${style.activeMy}`
+    ? `${style.activeMyPacks}`
     : `${style.activeProfile}`
 
   const firstBackgroundColor = stateBoolean

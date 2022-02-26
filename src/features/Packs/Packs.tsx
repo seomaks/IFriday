@@ -17,19 +17,15 @@ import {AppStateType} from "../../store/store";
 import {logoutTC} from "../../store/login-reducer";
 import {setIsMyIdAC, setIsPackListAC} from "../../store/app-reducer";
 import {Profile} from "../Profile/Profile";
-import {CheckBoxMyId} from "../../components/CheckMyBoxId/CheckMyBoxId";
+import {CheckBoxMyId} from "../../components/CheckMyBoxId/CheckBoxMyId";
 import {PacksList} from "./PacksList";
 import {PopUpAddPack} from "./PopAppAddPacks/PopUpAddPacks";
 import {PacksTable} from "./PacksTable/PacksTable";
 import {Pagination} from "../../components/Paginator/Paginator";
-import {
-  PageCountSelect
-} from "../../components/PageCountSelect/PageCountSelect";
+import {PageCountSelect} from "../../components/PageCountSelect/PageCountSelect";
 
 export const Packs = React.memo(() => {
-
   const dispatch = useDispatch()
-
   const {
     cardPacks,
     page,
@@ -46,7 +42,6 @@ export const Packs = React.memo(() => {
   const profileOrPackList = useSelector<AppStateType, boolean>(state => state.app.isPackList)
   const name = useSelector<AppStateType, string>(state => state.app.isData.name)
   const avatar = useSelector<AppStateType, string | undefined>(state => state.app.isData.avatar)
-
 
   const handleLogOut = () => {
     dispatch(logoutTC())
@@ -129,7 +124,7 @@ export const Packs = React.memo(() => {
           </div>}
         <div className={style.tableWrapper}>
           <PopUpAddPack
-            logic={addNewPack}
+            action={addNewPack}
             header={'Add New Pack'}/>
           <PacksTable
             packs={cardPacks}

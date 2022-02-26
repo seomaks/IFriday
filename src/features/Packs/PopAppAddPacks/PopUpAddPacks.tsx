@@ -5,11 +5,11 @@ import {PopUp} from "../../../components/PopUp/PopUp";
 import {AddPackForm} from "./AddPackForm";
 
 type PopUpAddPackPropsType = {
-  logic: (newName: string) => void
+  action: (newName: string) => void
   header: string
 }
 
-export const PopUpAddPack = React.memo(({logic,header}: PopUpAddPackPropsType) => {
+export const PopUpAddPack = React.memo(({action,header}: PopUpAddPackPropsType) => {
 
   const [activePopUp, setActivePopUp] = useState<boolean>(true)
 
@@ -27,7 +27,7 @@ export const PopUpAddPack = React.memo(({logic,header}: PopUpAddPackPropsType) =
         name={header}
         popUpStatus={activePopUp}
         popUpToggle={setActivePopUp}>
-        <AddPackForm addPack={logic}
+        <AddPackForm addPack={action}
                      popUpToggle={setActivePopUp}/>
       </PopUp>
       <Button

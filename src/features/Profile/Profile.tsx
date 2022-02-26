@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../store/store";
 import {Navigate} from "react-router-dom";
 import {logoutTC} from "../../store/login-reducer";
-import Preloader from "../../components/common/Preloader";
+import Preloader from "../../components/Preloader/Preloader";
 import style from "./Profile.module.css"
 import {Button} from "../../components/Button/Button";
 import {RangeContainer} from "../Packs/RangeContainer/RangeContainer";
@@ -61,7 +61,7 @@ export const Profile = ({
         handleRangeChange={handleRangeChange}/>
       <br/>
       <Search
-        fetchData={fetchPacks}
+        fetchPacks={fetchPacks}
         className={className}
       />
     </div>

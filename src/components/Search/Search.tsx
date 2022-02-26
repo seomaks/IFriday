@@ -6,20 +6,21 @@ import {setPacksSearchField} from "../../store/packs-reducer";
 import {useMemo} from "react";
 import {AppStateType} from "../../store/store";
 import {InputText} from "../InputText/InputText";
+import {CardsStateType} from "../../store/cards-reducer";
 
 type SearchPropsType = {
-  fetchData: (payload?: PacksGetParams /*| CardsStateType*/) => any
+  fetchPacks: (payload?: PacksGetParams | CardsStateType) => any
   className: string
 }
 
-export const Search = React.memo(({fetchData,className}: SearchPropsType) => {
+export const Search = React.memo(({fetchPacks,className}: SearchPropsType) => {
   const dispatch = useDispatch();
   const searchField = useSelector<AppStateType, string>(state => state.packs.searchField)
   const isLoading = useSelector<AppStateType, boolean>(state => state.app.isLoading)
 
   const debouncedFetchData = useMemo(() => debounce(() => {
-    dispatch(fetchData())
-  }, 500), [dispatch, fetchData]);
+    dispatch(fetchPacks())
+  }, 500), [dispatch, fetchPacks]);
 
   const onSearchChange = (value: string): void => {
     dispatch(setPacksSearchField(value));
